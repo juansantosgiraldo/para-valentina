@@ -10,6 +10,12 @@ const particles = document.getElementById("particles");
 const musica = document.getElementById("musicaFondo"); // 🎵 Elemento de música
 
 // ===============================
+// INICIAR CORAZONES Y ESTRELLAS
+// ===============================
+// Inicia las partículas desde que carga la página
+crearCorazonesYEstrellas();
+
+// ===============================
 // ABRIR REGALO Y REPRODUCIR MÚSICA
 // ===============================
 giftButton.addEventListener("click", () => {
@@ -23,7 +29,6 @@ giftButton.addEventListener("click", () => {
         });
     }
 
-    crearCorazones();
     actualizarContador();
     lanzarConfeti();
 
@@ -42,27 +47,36 @@ function actualizarContador(){
     const diferencia = hoy - inicioRelacion;
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
 
-    contador.innerHTML = dias + " días juntos 💛";
+    if (contador) {
+        contador.innerHTML = dias + " días juntos 💛";
+    }
 }
 
 // ===============================
-// CORAZONES
+// CORAZONES Y ESTRELLAS AMARILLAS
 // ===============================
-function crearCorazones(){
-    setInterval(()=>{
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "💛";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (20 + Math.random() * 25) + "px";
-        heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+function crearCorazonesYEstrellas(){
+    const figuras = ["💛", "⭐", "✨", "🌟"]; // Mezcla de corazones y estrellas
 
-        particles.appendChild(heart);
+    setInterval(()=>{
+        if (!particles) return;
+
+        const elemento = document.createElement("div");
+        elemento.className = "heart";
+        
+        // Elige aleatoriamente una figura del arreglo
+        elemento.innerHTML = figuras[Math.floor(Math.random() * figuras.length)];
+        
+        elemento.style.left = Math.random() * 100 + "vw";
+        elemento.style.fontSize = (18 + Math.random() * 24) + "px";
+        elemento.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+        particles.appendChild(elemento);
 
         setTimeout(()=>{
-            heart.remove();
+            elemento.remove();
         }, 10000);
-    }, 350);
+    }, 250); // Sale una figura cada 250 milisegundos
 }
 
 // ===============================
@@ -106,8 +120,9 @@ function lanzarConfeti(){
 // ===============================
 // MENSAJE FINAL
 // ===============================
-loveButton.addEventListener("click", ()=>{
-    alert(`💛
+if (loveButton) {
+    loveButton.addEventListener("click", ()=>{
+        alert(`💛
 
 Feliz cumpleaños mi amor.
 
@@ -121,7 +136,8 @@ Te amo muchísimo.
 
 Con mucho amor,
 Juan Pablo 💛`);
-});
+    });
+}
 
 // ===============================
 // EFECTO DE APARICIÓN Y SLIDER
