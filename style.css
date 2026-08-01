@@ -1,0 +1,442 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#34125c,#6b3db8,#b68cff);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   FONDO
+========================== */
+
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+/* ==========================
+   PANTALLA INICIAL
+========================== */
+
+#inicio{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.glass{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.glass h3{
+    color:#FFD54F;
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.glass h1{
+    font-family:'Dancing Script',cursive;
+    font-size:82px;
+    margin-bottom:20px;
+}
+
+.glass p{
+    line-height:1.8;
+    font-size:20px;
+}
+
+/* ==========================
+   BOTÓN REGALO
+========================== */
+
+#giftButton{
+
+    margin-top:35px;
+
+    width:220px;
+
+    height:220px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:#FFD54F;
+
+    color:#6b3db8;
+
+    font-size:60px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    animation:latido 2s infinite;
+
+}
+
+#giftButton span{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+#giftButton:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 30px #FFD54F;
+
+}
+
+@keyframes latido{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+
+}
+
+/* ==========================
+   CONTENIDO
+========================== */
+
+.hidden{
+
+display:none;
+
+}
+
+#contenido{
+
+padding:60px 25px;
+
+text-align:center;
+
+}
+
+header h1{
+
+font-size:48px;
+
+margin-bottom:20px;
+
+}
+
+header p{
+
+font-size:20px;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+/* ==========================
+   MÚSICA
+========================== */
+
+.musica{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.musica h2{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.musica p{
+
+font-size:18px;
+
+margin-bottom:25px;
+
+}
+
+.boton-musica{
+
+display:inline-block;
+
+padding:18px 35px;
+
+background:#FFD54F;
+
+color:#6b3db8;
+
+text-decoration:none;
+
+font-weight:bold;
+
+border-radius:40px;
+
+transition:.3s;
+
+}
+
+.boton-musica:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px #FFD54F;
+
+}
+
+/* ==========================
+   CARRUSEL
+========================== */
+
+/* AJUSTES PARA EL SLIDER DE FOTOS */
+/* ===============================
+   ESTILOS DEL SLIDER / CARRUSEL
+   =============================== */
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slides {
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  display: none; /* Oculta todas las fotos */
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.slide.active {
+  display: block; /* Muestra solo la foto activa */
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================
+   CARTA
+========================== */
+
+.carta{
+    margin-top:80px;
+    padding:20px;
+}
+
+.carta h2{
+    font-size:38px;
+    margin-bottom:25px;
+    color:#FFD54F;
+}
+
+.carta p{
+    max-width:850px;
+    margin:auto;
+    line-height:2;
+    font-size:20px;
+    background:rgba(255,255,255,.10);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+/* ==========================
+   CONTADOR
+========================== */
+
+.contador{
+    margin-top:80px;
+}
+
+.contador h2{
+    font-size:35px;
+    color:#FFD54F;
+}
+
+#timeTogether{
+    margin-top:20px;
+    font-size:45px;
+    font-weight:bold;
+}
+
+/* ==========================
+   BOTÓN FINAL
+========================== */
+
+.final{
+    margin:90px 0;
+}
+
+#loveButton{
+    padding:20px 45px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    background:#FFD54F;
+    color:#6b3db8;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#loveButton:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px #FFD54F;
+}
+
+/* ==========================
+   CORAZONES
+========================== */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    color:#FFD54F;
+    animation:subir 8s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes subir{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.glass{
+padding:30px;
+}
+
+.glass h1{
+font-size:60px;
+}
+
+.glass p{
+font-size:18px;
+}
+
+#giftButton{
+width:180px;
+height:180px;
+font-size:50px;
+}
+
+header h1{
+font-size:34px;
+}
+
+header p{
+font-size:18px;
+}
+
+.musica h2,
+.carta h2,
+.contador h2{
+font-size:28px;
+}
+
+.carta p{
+font-size:17px;
+padding:20px;
+}
+
+#timeTogether{
+font-size:32px;
+}
+
+.slide{
+border-radius:18px;
+}
+
+.boton-musica{
+font-size:16px;
+padding:15px 25px;
+}
+
+#loveButton{
+font-size:18px;
+padding:16px 30px;
+}
+
+}
